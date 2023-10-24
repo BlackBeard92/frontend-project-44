@@ -9,3 +9,6 @@
 
 ### Demonstration of the game brain-calc
 <a href="https://asciinema.org/a/616791" target="_blank"><img src="https://asciinema.org/a/616791.svg" /></a>
+
+### Demonstration of the game brain-gcd
+<a href="https://asciinema.org/a/616810" target="_blank"><img src="https://asciinema.org/a/616810.svg" /></a>

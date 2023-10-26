@@ -13,8 +13,8 @@ const gameCalc = () => {
   console.log('What is the result of the expression?');
 
   for (let i = 1; i <= winningStreak; i += 1) {
-    const a = randomNumber();
-    const b = randomNumber();
+    const a = randomNumber(0, 100);
+    const b = randomNumber(0, 100);
     const operator = choosesRandomOperator(['+', '-', '*']);
     let result;
     console.log(`Question: ${a} ${operator} ${b}`);

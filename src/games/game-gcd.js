@@ -13,8 +13,8 @@ const gameGcd = () => {
   console.log('Find the greatest common divisor of given numbers.');
 
   for (let i = 1; i <= winningStreak; i += 1) {
-    const a = randomNumber();
-    const b = randomNumber();
+    const a = randomNumber(1, 100);
+    const b = randomNumber(1, 100);
 
     console.log(`Question: ${a} ${b}`);
     const result = findsGcd(a, b);

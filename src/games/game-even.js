@@ -13,7 +13,7 @@ const gameEven = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
   for (let i = 1; i <= winningStreak; i += 1) {
-    const number = randomNumber();
+    const number = randomNumber(1, 100);
     console.log(`Question: ${number}`);
     const answer = entersAnswer();
     const even = isEven(number);

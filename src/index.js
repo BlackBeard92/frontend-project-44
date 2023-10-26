@@ -4,7 +4,7 @@ export const winningStreak = 3;
 
 export const entersUsername = () => readlineSync.question('May I have your name? ');
 
-export const randomNumber = () => Math.floor(Math.random() * 101) + 1;
+export const randomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 export const entersAnswer = () => readlineSync.question('Your answer: ');
 

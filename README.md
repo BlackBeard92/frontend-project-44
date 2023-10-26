@@ -12,3 +12,6 @@
 
 ### Demonstration of the game brain-gcd
 <a href="https://asciinema.org/a/616810" target="_blank"><img src="https://asciinema.org/a/616810.svg" /></a>
+
+### Demonstration of the game brain-progression
+<a href="https://asciinema.org/a/617284" target="_blank"><img src="https://asciinema.org/a/617284.svg" /></a>

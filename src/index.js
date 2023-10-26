@@ -27,3 +27,14 @@ export const findsGcd = (num1, num2) => {
   }
   return a || b;
 };
+
+export const createsArithmeticProgression = (start, length = 10) => {
+  const step = Math.floor(Math.random() * 10) + 1;
+  const result = [start];
+  let temp = start;
+  for (let i = 2; i <= length; i += 1) {
+    temp += step;
+    result.push(temp);
+  }
+  return result;
+};

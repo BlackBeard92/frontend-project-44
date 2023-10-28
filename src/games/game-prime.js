@@ -1,5 +1,5 @@
 import {
-  entersUsername,
+  greetsUser,
   randomNumber,
   entersAnswer,
   winningStreak,
@@ -7,9 +7,7 @@ import {
 } from '../index.js';
 
 const gamePrime = () => {
-  console.log('Welcome to the Brain Games!');
-  const name = entersUsername();
-  console.log(`Hello, ${name}!`);
+  const name = greetsUser();
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
   for (let i = 1; i <= winningStreak; i += 1) {

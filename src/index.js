@@ -2,7 +2,12 @@ import readlineSync from 'readline-sync';
 
 export const winningStreak = 3;
 
-export const entersUsername = () => readlineSync.question('May I have your name? ');
+export const greetsUser = () => {
+  console.log('Welcome to the Brain Games!');
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!`);
+  return name;
+};
 
 export const randomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 

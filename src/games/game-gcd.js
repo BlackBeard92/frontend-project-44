@@ -1,5 +1,5 @@
 import {
-  entersUsername,
+  greetsUser,
   randomNumber,
   entersAnswer,
   winningStreak,
@@ -7,9 +7,7 @@ import {
 } from '../index.js';
 
 const gameGcd = () => {
-  console.log('Welcome to the Brain Games!');
-  const name = entersUsername();
-  console.log(`Hello, ${name}!`);
+  const name = greetsUser();
   console.log('Find the greatest common divisor of given numbers.');
 
   for (let i = 1; i <= winningStreak; i += 1) {

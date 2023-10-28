@@ -9,6 +9,16 @@ export const greetsUser = () => {
   return name;
 };
 
+export const checkingAnswer = (result, answer, name) => {
+  if (result === answer) {
+    console.log('Correct!');
+  } else {
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'.
+Let's try again, ${name}!`);
+    process.exit();
+  }
+};
+
 export const randomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 export const entersAnswer = () => readlineSync.question('Your answer: ');

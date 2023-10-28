@@ -1,5 +1,6 @@
 import {
   greetsUser,
+  checkingAnswer,
   randomNumber,
   entersAnswer,
   winningStreak,
@@ -17,13 +18,7 @@ const gameGcd = () => {
     console.log(`Question: ${a} ${b}`);
     const result = findsGcd(a, b);
     const answer = Number(entersAnswer());
-    if (result === answer) {
-      console.log('Correct!');
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'.
-Let's try again, ${name}!`);
-      process.exit();
-    }
+    checkingAnswer(result, answer, name);
   }
   console.log(`Congratulations, ${name}!`);
 };

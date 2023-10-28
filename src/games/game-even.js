@@ -1,5 +1,6 @@
 import {
   greetsUser,
+  checkingAnswer,
   randomNumber,
   entersAnswer,
   winningStreak,
@@ -14,17 +15,8 @@ const gameEven = () => {
     const number = randomNumber(1, 100);
     console.log(`Question: ${number}`);
     const answer = entersAnswer();
-    const even = isEven(number);
-    if (even && answer === 'yes') {
-      console.log('Correct!');
-    } else if (!even && answer === 'no') {
-      console.log('Correct!');
-    } else {
-      const correctAnswer = even ? 'yes' : 'no';
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
-Let's try again, ${name}!`);
-      process.exit();
-    }
+    const result = isEven(number) ? 'yes' : 'no';
+    checkingAnswer(result, answer, name);
   }
   console.log(`Congratulations, ${name}!`);
 };

@@ -38,3 +38,19 @@ export const createsArithmeticProgression = (start, length = 10) => {
   }
   return result;
 };
+
+export const isPrimes = (num) => {
+  if (num === 1) {
+    return false;
+  }
+  const dividers = [2, 3, 5, 7];
+  if (dividers.includes(num)) {
+    return true;
+  }
+  for (let i = 0; i < dividers.length; i += 1) {
+    if (num % dividers[i] === 0) {
+      return false;
+    }
+  }
+  return true;
+};

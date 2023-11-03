@@ -1,37 +1,24 @@
 import {
   greetsUser,
   checkingAnswer,
-  randomNumber,
   entersAnswer,
-  winningStreak,
+  winCount,
   choosesRandomOperator,
+  createExpression,
 } from '../index.js';
+
+import getRandomNumber from '../utils.js';
 
 const gameCalc = () => {
   const name = greetsUser();
   console.log('What is the result of the expression?');
 
-  for (let i = 1; i <= winningStreak; i += 1) {
-    const a = randomNumber(0, 100);
-    const b = randomNumber(0, 100);
+  for (let i = 1; i <= winCount; i += 1) {
+    const a = getRandomNumber(0, 100);
+    const b = getRandomNumber(0, 100);
     const operator = choosesRandomOperator(['+', '-', '*']);
-    let result;
     console.log(`Question: ${a} ${operator} ${b}`);
-
-    switch (operator) {
-      case '+':
-        result = a + b;
-        break;
-      case '-':
-        result = a - b;
-        break;
-      case '*':
-        result = a * b;
-        break;
-      default:
-        result = undefined;
-    }
-
+    const result = createExpression(a, b, operator);
     const answer = Number(entersAnswer());
     checkingAnswer(result, answer, name);
   }

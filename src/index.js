@@ -1,15 +1,6 @@
 import readlineSync from 'readline-sync';
-import getRandomNumber from './utils.js';
 
 export const winCount = 3;
-
-export const rules = [
-  'What is the result of the expression?',
-  'Answer "yes" if the number is even, otherwise answer "no".',
-  'Find the greatest common divisor of given numbers.',
-  'Answer "yes" if given number is prime. Otherwise answer "no".',
-  'What number is missing in the progression?',
-];
 
 export const checkingAnswer = (result, answer, name) => {
   if (result === answer) {
@@ -81,54 +72,6 @@ export const createExpression = (a, b, operator) => {
       result = undefined;
   }
   return result;
-};
-
-export const getQuestionAndAnswerGamePrime = (name) => {
-  const number = getRandomNumber(1, 100);
-  console.log(`Question: ${number}`);
-  const answer = entersAnswer();
-  const result = isPrime(number) ? 'yes' : 'no';
-  checkingAnswer(result, answer, name);
-};
-
-export const getQuestionAndAnswerGameProgression = (name) => {
-  const ProgressionStep = Math.floor(Math.random() * 10) + 1;
-  const progressionArr = createProgression(getRandomNumber(0, 100), ProgressionStep);
-  const indexNumber = getRandomNumber(0, 9);
-  const result = progressionArr[indexNumber];
-  progressionArr[indexNumber] = '..';
-  const progressionStr = progressionArr.join(' ');
-
-  console.log(`Question: ${progressionStr}`);
-  const answer = Number(entersAnswer());
-  checkingAnswer(result, answer, name);
-};
-
-export const getQuestionAndAnswerGameGcd = (name) => {
-  const a = getRandomNumber(1, 100);
-  const b = getRandomNumber(1, 100);
-  console.log(`Question: ${a} ${b}`);
-  const result = findGcd(a, b);
-  const answer = Number(entersAnswer());
-  checkingAnswer(result, answer, name);
-};
-
-export const getQuestionAndAnswerGameEven = (name) => {
-  const number = getRandomNumber(1, 100);
-  console.log(`Question: ${number}`);
-  const answer = entersAnswer();
-  const result = isEven(number) ? 'yes' : 'no';
-  checkingAnswer(result, answer, name);
-};
-
-export const getQuestionAndAnswerGameCalc = (name) => {
-  const a = getRandomNumber(0, 100);
-  const b = getRandomNumber(0, 100);
-  const operator = choosesRandomOperator(['+', '-', '*']);
-  console.log(`Question: ${a} ${operator} ${b}`);
-  const result = createExpression(a, b, operator);
-  const answer = Number(entersAnswer());
-  checkingAnswer(result, answer, name);
 };
 
 export const game = (rule, getQuestionAndAnswer) => {

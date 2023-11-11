@@ -1,4 +1,4 @@
-<h1 style='text-align: center;'>Brain games</h1>
+<h1 style='text-align: center;'>Brain Games</h1>
 
 [![Actions Status](https://github.com/BlackBeard92/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/BlackBeard92/frontend-project-44/actions) <a href="https://codeclimate.com/github/BlackBeard92/frontend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/9a6c85f314b7a92b0731/maintainability" /></a>
 
@@ -12,6 +12,31 @@
 ## Installing brain-games
 <a href="https://asciinema.org/a/617577" target="_blank"><img src="https://asciinema.org/a/617577.svg" /></a>
 
+## Setup
+```bash
+npm install brain-games
+```
+## Run Brain Games
+```bash
+#brain-calc
+make brain-calc
+```
+```bash
+#brain-progression
+make brain-progression
+```
+```bash
+#brain-even
+make brain-even
+```
+```bash
+#brain-gcd
+make brain-gcd
+```
+```bash
+#brain-prime
+make brain-prime
+```
 ## Deployment
 ### Tech stack
 - **Node.js**

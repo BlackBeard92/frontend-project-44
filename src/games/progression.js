@@ -14,7 +14,7 @@ const createProgression = (start, step, length) => {
 };
 
 const getQuestionAndAnswerGameProgression = () => {
-  const progressionArr = createProgression(getRandomNumber(0, 100), getRandomNumber(1, 10));
+  const progressionArr = createProgression(getRandomNumber(0, 100), getRandomNumber(1, 10), 10);
   const hiddenIndex = getRandomNumber(0, progressionArr.length - 1);
   const correctAnswer = progressionArr[hiddenIndex];
   progressionArr[hiddenIndex] = '..';

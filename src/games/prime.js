@@ -17,9 +17,9 @@ const isPrime = (num) => {
 
 const getQuestionAndAnswerGamePrime = () => {
   const number = getRandomNumber(1, 100);
-  const question = `Question: ${number}`;
-  const correctAnswer = isPrime(number) ? 'yes' : 'no';
-  return [question, correctAnswer];
+  const question = `${number}`;
+  const answer = isPrime(number) ? 'yes' : 'no';
+  return [question, answer];
 };
 
 export default () => runEngine(rule, getQuestionAndAnswerGamePrime);

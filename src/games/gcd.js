@@ -19,9 +19,9 @@ const findGcd = (num1, num2) => {
 const getQuestionAndAnswerGameGcd = () => {
   const a = getRandomNumber(1, 100);
   const b = getRandomNumber(1, 100);
-  const question = `Question: ${a} ${b}`;
-  const correctAnswer = findGcd(a, b);
-  return [question, correctAnswer];
+  const question = `${a} ${b}`;
+  const answer = String(findGcd(a, b));
+  return [question, answer];
 };
 
 export default () => runEngine(rule, getQuestionAndAnswerGameGcd);

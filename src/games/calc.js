@@ -3,7 +3,7 @@ import getRandomNumber from '../utils.js';
 
 const rule = 'What is the result of the expression?';
 
-const createExpression = (a, b, operator) => {
+const calculate = (a, b, operator) => {
   switch (operator) {
     case '+':
       return a + b;
@@ -20,10 +20,11 @@ const getQuestionAndAnswerGameCalc = () => {
   const a = getRandomNumber(0, 100);
   const b = getRandomNumber(0, 100);
   const operators = ['+', '-', '*'];
-  const operator = getRandomNumber(0, operators.length - 1);
-  const question = `Question: ${a} ${operators[operator]} ${b}`;
-  const correctAnswer = createExpression(a, b, operators[operator]);
-  return [question, correctAnswer];
+  const index = getRandomNumber(0, operators.length - 1);
+  const operator = operators[index];
+  const question = `${a} ${operator} ${b}`;
+  const answer = String(calculate(a, b, operator));
+  return [question, answer];
 };
 
 export default () => runEngine(rule, getQuestionAndAnswerGameCalc);

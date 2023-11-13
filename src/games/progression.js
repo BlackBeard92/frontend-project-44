@@ -4,24 +4,25 @@ import getRandomNumber from '../utils.js';
 const rule = 'What number is missing in the progression?';
 
 const createProgression = (start, step, length) => {
-  const result = [start];
-  let temp = start;
-  for (let i = 2; i <= length; i += 1) {
-    temp += step;
-    result.push(temp);
+  const result = [];
+  for (let i = 0; i < length; i += 1) {
+    result.push(start + i * step);
   }
   return result;
 };
 
 const getQuestionAndAnswerGameProgression = () => {
-  const progressionArr = createProgression(getRandomNumber(0, 100), getRandomNumber(1, 10), 10);
-  const hiddenIndex = getRandomNumber(0, progressionArr.length - 1);
-  const correctAnswer = progressionArr[hiddenIndex];
-  progressionArr[hiddenIndex] = '..';
-  const progressionStr = progressionArr.join(' ');
+  const start = getRandomNumber(0, 100);
+  const step = getRandomNumber(1, 10);
+  const length = 10;
+  const progression = createProgression(start, step, length);
+  const hiddenIndex = getRandomNumber(0, progression.length - 1);
+  const answer = String(progression[hiddenIndex]);
+  progression[hiddenIndex] = '..';
+  const progressionStr = progression.join(' ');
 
-  const question = `Question: ${progressionStr}`;
-  return [question, correctAnswer];
+  const question = `${progressionStr}`;
+  return [question, answer];
 };
 
 export default () => runEngine(rule, getQuestionAndAnswerGameProgression);

@@ -5,11 +5,10 @@ const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEven = (number) => number % 2 === 0;
 
-const getQuestionAndAnswerGameEven = () => {
+const generateRound = () => {
   const number = getRandomNumber(1, 100);
-  const question = `${number}`;
   const answer = isEven(number) ? 'yes' : 'no';
-  return [question, answer];
+  return [number, answer];
 };
 
-export default () => runEngine(rule, getQuestionAndAnswerGameEven);
+export default () => runEngine(rule, generateRound);

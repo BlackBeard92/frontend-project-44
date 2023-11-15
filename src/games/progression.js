@@ -11,7 +11,7 @@ const createProgression = (start, step, length) => {
   return result;
 };
 
-const getQuestionAndAnswerGameProgression = () => {
+const generateRound = () => {
   const start = getRandomNumber(0, 100);
   const step = getRandomNumber(1, 10);
   const length = 10;
@@ -20,9 +20,7 @@ const getQuestionAndAnswerGameProgression = () => {
   const answer = String(progression[hiddenIndex]);
   progression[hiddenIndex] = '..';
   const progressionStr = progression.join(' ');
-
-  const question = `${progressionStr}`;
-  return [question, answer];
+  return [progressionStr, answer];
 };
 
-export default () => runEngine(rule, getQuestionAndAnswerGameProgression);
+export default () => runEngine(rule, generateRound);

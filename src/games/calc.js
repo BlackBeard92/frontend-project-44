@@ -16,15 +16,14 @@ const calculate = (a, b, operator) => {
   }
 };
 
-const getQuestionAndAnswerGameCalc = () => {
+const generateRound = () => {
   const a = getRandomNumber(0, 100);
   const b = getRandomNumber(0, 100);
   const operators = ['+', '-', '*'];
   const index = getRandomNumber(0, operators.length - 1);
   const operator = operators[index];
-  const question = `${a} ${operator} ${b}`;
   const answer = String(calculate(a, b, operator));
-  return [question, answer];
+  return [`${a} ${operator} ${b}`, answer];
 };
 
-export default () => runEngine(rule, getQuestionAndAnswerGameCalc);
+export default () => runEngine(rule, generateRound);

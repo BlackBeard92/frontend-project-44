@@ -16,12 +16,11 @@ const findGcd = (num1, num2) => {
   return a || b;
 };
 
-const getQuestionAndAnswerGameGcd = () => {
+const generateRound = () => {
   const a = getRandomNumber(1, 100);
   const b = getRandomNumber(1, 100);
-  const question = `${a} ${b}`;
   const answer = String(findGcd(a, b));
-  return [question, answer];
+  return [`${a} ${b}`, answer];
 };
 
-export default () => runEngine(rule, getQuestionAndAnswerGameGcd);
+export default () => runEngine(rule, generateRound);
